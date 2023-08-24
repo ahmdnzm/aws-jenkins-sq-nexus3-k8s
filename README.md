@@ -159,5 +159,23 @@ lrwxrwxrwx 1 root root 43 Aug  3 15:12 /etc/alternatives/java -> /usr/lib/jvm/ja
     - Inbound Securtiy Group Rules allow port 22 from My IP for ssh connection
     - Inbound Securtiy Group Rules allow port 8081 from My IP for Nexus Web access.
     - Inbound Securtiy Group Rules allow port 8081 from Jenkins Security Group for Nexus Web access.
-    - Advanced Details > User data. 
+    - At Advanced Details > User data field, copy and paste the following scripts
+    
+        - [nexus-setup.sh](/gitops/scripts/nexus-setup.sh)
+    
     - Other settings use default
+
+## Setup SonarQube Server
+
+- Deploy SonarQube Server instance
+    - Instance name called SonarServer
+    - AMI use Ubuntu 20.04 LTS
+    - Instance type use t2.medium
+    - Create new keypair called sonar-key
+    - Create Security group called sonar-SG
+    - Inbound Securtiy Group Rules allow port 22 from My IP for ssh connection
+    - Inbound Securtiy Group Rules allow port 80 from My IP for Sonarqube Web access.
+    - Inbound Securtiy Group Rules allow port 80 from Jenkins Security Group for Sonarqube Web access.
+    - At Advanced Details > User data field, copy and paste the following scripts
+    
+        - [nexus-setup.sh](/gitops/scripts/sonar-setup.sh)
